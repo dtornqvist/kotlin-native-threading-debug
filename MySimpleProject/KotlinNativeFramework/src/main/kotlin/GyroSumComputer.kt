@@ -1,9 +1,9 @@
 //
-//  KotlinNativeFramework.kt
-//  KotlinNativeFramework
+//  GyroSumComputer.kt
+//  GyroSumComputer
 //
 
-class KotlinNativeFramework {
+class GyroSumComputer {
 
     private var currentOutput = OutputData(0.0)
 

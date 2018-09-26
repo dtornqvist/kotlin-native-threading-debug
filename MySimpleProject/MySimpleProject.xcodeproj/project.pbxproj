@@ -45,6 +45,7 @@
 /* Begin PBXFileReference section */
 		8A4FD01F9B6342BBFBB593B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A4FD070DE9985683BC659B7 /* gradle-wrapper.jar */ = {isa = PBXFileReference; lastKnownFileType = archive.jar; path = "gradle-wrapper.jar"; sourceTree = "<group>"; };
+		8A4FD0C3CDFC2D419D4986C0 /* GyroSumWorker.kt */ = {isa = PBXFileReference; lastKnownFileType = file.kt; path = GyroSumWorker.kt; sourceTree = "<group>"; };
 		8A4FD0F7C01E2AEC91A90469 /* gradle-wrapper.properties */ = {isa = PBXFileReference; lastKnownFileType = file.properties; path = "gradle-wrapper.properties"; sourceTree = "<group>"; };
 		8A4FD24570549D7D337CCEA8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8A4FD28ADAE41FCCC88E7F44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,7 +56,7 @@
 		8A4FD98B862F5CA6C444A56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A4FD98CA0CCF50D304C2676 /* build.gradle */ = {isa = PBXFileReference; lastKnownFileType = file.gradle; path = build.gradle; sourceTree = "<group>"; };
 		8A4FDA708A697BDC5DED94A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		8A4FDB4921061D5F636A648A /* KotlinNativeFramework.kt */ = {isa = PBXFileReference; lastKnownFileType = file.kt; path = KotlinNativeFramework.kt; sourceTree = "<group>"; };
+		8A4FDB4921061D5F636A648A /* GyroSumComputer.kt */ = {isa = PBXFileReference; lastKnownFileType = file.kt; path = GyroSumComputer.kt; sourceTree = "<group>"; };
 		8A4FDB7D50AC172BC56DFC0A /* KotlinNativeFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KotlinNativeFramework.framework; path = Library/Frameworks/KotlinNativeFramework.framework; sourceTree = DEVELOPER_DIR; };
 		8A4FDB913C69E947A1352E80 /* KotlinNativeFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KotlinNativeFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4FDBF4DA7975918052DC7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,7 +152,8 @@
 		8A4FD8E371146EECEF37C8BF /* kotlin */ = {
 			isa = PBXGroup;
 			children = (
-				8A4FDB4921061D5F636A648A /* KotlinNativeFramework.kt */,
+				8A4FDB4921061D5F636A648A /* GyroSumComputer.kt */,
+				8A4FD0C3CDFC2D419D4986C0 /* GyroSumWorker.kt */,
 			);
 			path = kotlin;
 			sourceTree = "<group>";
