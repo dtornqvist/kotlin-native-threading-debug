@@ -18,11 +18,8 @@ class GyroSumWorker {
     fun performOperation(input: InputData) {
         input.freeze()
         worker.execute(TransferMode.SAFE, { input }) {
-            val res = gyroSumComputer?.performOperation(it)
-            println("res = " + res) // res is not null
-            res
+            gyroSumComputer?.performOperation(it)
         }.consume { outputData ->
-            println("outputData = " + outputData) // Seems to be null all the time
             outputData?.let { listener?.gyroSumUpdate(it) }
         }
     }

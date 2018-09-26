@@ -9,7 +9,7 @@ class GyroSumComputer {
 
     fun performOperation(input: InputData): OutputData {
         currentOutput = OutputData(currentOutput.xSum + input.x)
-        return currentOutput
+        return OutputData(currentOutput.xSum)
     }
 }
 
