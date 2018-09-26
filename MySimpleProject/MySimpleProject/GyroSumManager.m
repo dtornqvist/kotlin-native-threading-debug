@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly, strong) KNFGyroSumWorker *gyroSumWorker;
 @property (nonatomic, strong, readonly) CMMotionManager *motionManager;
+@property (nonatomic, strong, readonly) NSOperationQueue *sensorQueue;
 
 @end
 
@@ -24,6 +25,10 @@
         self.gyroSumWorker.listener = self;
 
         _motionManager = [[CMMotionManager alloc] init];
+
+        _sensorQueue = [NSOperationQueue new];
+        self.sensorQueue.name = @"SensorDataQueue";
+        self.sensorQueue.maxConcurrentOperationCount = 1;
     }
     return self;
 }
@@ -32,7 +37,7 @@
 {
     __block __weak typeof(self) weakSelf = self;
 
-    [self.motionManager startGyroUpdatesToQueue:NSOperationQueue.mainQueue withHandler:^(CMGyroData *gyroData, NSError *error) {
+    [self.motionManager startGyroUpdatesToQueue:self.sensorQueue withHandler:^(CMGyroData *gyroData, NSError *error) {
         if (gyroData != nil) {
             KNFInputData *input = [[KNFInputData alloc] initWithX:gyroData.rotationRate.x];
             [weakSelf.gyroSumWorker performOperationInput:input];
