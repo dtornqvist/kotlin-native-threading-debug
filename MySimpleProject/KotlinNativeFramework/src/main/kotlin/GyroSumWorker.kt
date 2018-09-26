@@ -1,18 +1,29 @@
 import kotlin.native.concurrent.*
 
+
+@ThreadLocal
+private var gyroSumComputer: GyroSumComputer? = null
+
 class GyroSumWorker {
 
     var listener: GyroSumWorkerListener? = null
-    private val gyroSumComputer = GyroSumComputer()
     private val worker = Worker.start()
+
+    init {
+        worker.execute(TransferMode.SAFE, { GyroSumComputer() }) {
+            gyroSumComputer = it
+        }
+    }
 
     fun performOperation(input: InputData) {
         input.freeze()
-        // I cannot freeze gyroSumComputer as it may contain buffers and states that changes over time. How to solve this?
-        worker.execute(TransferMode.SAFE, { Pair(gyroSumComputer, input) }) { input ->
-            input.first?.performOperation(input.second)
+        worker.execute(TransferMode.SAFE, { input }) {
+            val res = gyroSumComputer?.performOperation(it)
+            println("res = " + res) // res is not null
+            res
         }.consume { outputData ->
-            listener?.gyroSumUpdate(outputData)
+            println("outputData = " + outputData) // Seems to be null all the time
+            outputData?.let { listener?.gyroSumUpdate(it) }
         }
     }
 }
