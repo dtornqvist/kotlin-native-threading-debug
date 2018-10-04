@@ -16,6 +16,7 @@
 		8A4FDB789C06CE0B2C0C2DBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4FD24570549D7D337CCEA8 /* ViewController.m */; };
 		8A4FDD30ABEBC2A6A0558C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4FD90077722BC6F55D0FEC /* LaunchScreen.storyboard */; };
 		8A4FDF3334A3D01DB6F5397F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4FD2B0DCC9CF762597238D /* main.m */; };
+		BAF127CC21661DA200A9E39E /* SingleThreadWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF127CB21661DA200A9E39E /* SingleThreadWorker.m */; };
 		BAF9C2DB214BE8AF006F4503 /* GyroSumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF9C2DA214BE8AF006F4503 /* GyroSumManager.m */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,8 @@
 		8A4FDB913C69E947A1352E80 /* KotlinNativeFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KotlinNativeFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4FDBF4DA7975918052DC7F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A4FDEC92D99D7ABBF642674 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BAF127CA21661DA200A9E39E /* SingleThreadWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleThreadWorker.h; sourceTree = "<group>"; };
+		BAF127CB21661DA200A9E39E /* SingleThreadWorker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleThreadWorker.m; sourceTree = "<group>"; };
 		BAF9C2D9214BE8AF006F4503 /* GyroSumManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GyroSumManager.h; sourceTree = "<group>"; };
 		BAF9C2DA214BE8AF006F4503 /* GyroSumManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GyroSumManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +123,8 @@
 				8A4FD24570549D7D337CCEA8 /* ViewController.m */,
 				BAF9C2D9214BE8AF006F4503 /* GyroSumManager.h */,
 				BAF9C2DA214BE8AF006F4503 /* GyroSumManager.m */,
+				BAF127CA21661DA200A9E39E /* SingleThreadWorker.h */,
+				BAF127CB21661DA200A9E39E /* SingleThreadWorker.m */,
 			);
 			path = MySimpleProject;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF127CC21661DA200A9E39E /* SingleThreadWorker.m in Sources */,
 				BAF9C2DB214BE8AF006F4503 /* GyroSumManager.m in Sources */,
 				8A4FDF3334A3D01DB6F5397F /* main.m in Sources */,
 				8A4FD9803149A44BAB3504E5 /* AppDelegate.m in Sources */,
