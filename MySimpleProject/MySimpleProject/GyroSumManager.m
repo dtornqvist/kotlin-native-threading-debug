@@ -37,7 +37,7 @@
 {
     __block __weak typeof(self) weakSelf = self;
 
-    [self.motionManager startGyroUpdatesToQueue:self.sensorQueue withHandler:^(CMGyroData *gyroData, NSError *error) {
+    [self.motionManager startGyroUpdatesToQueue:NSOperationQueue.mainQueue withHandler:^(CMGyroData *gyroData, NSError *error) {
         if (gyroData != nil) {
             KNFInputData *input = [[KNFInputData alloc] initWithX:gyroData.rotationRate.x];
             [weakSelf.gyroSumWorker performOperationInput:input];
