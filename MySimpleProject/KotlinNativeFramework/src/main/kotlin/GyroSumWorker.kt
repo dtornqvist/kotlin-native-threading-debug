@@ -7,7 +7,6 @@ private var gyroSumComputer: GyroSumComputer? = null
 class GyroSumWorker {
     var listener: GyroSumWorkerListener? = null
     private val worker = Worker.start()
-    private val listenerWorker = Worker.start()
 
     init {
         worker.execute(TransferMode.SAFE, { GyroSumComputer() }) {
@@ -18,15 +17,9 @@ class GyroSumWorker {
     fun performOperation(input: InputData) {
         println("input data received")
         input.freeze()
-        val future = worker.execute(TransferMode.SAFE, { input }) {
-            gyroSumComputer?.performOperation(it)
-        }
-
-        listenerWorker.execute(TransferMode.SAFE, { Pair(future, listener.freeze()) }) { input ->
-            input.first.consume { outputData ->
-                println("output computed")
-                outputData?.let { input.second?.gyroSumUpdate(it) }
-            }
+        worker.execute(TransferMode.UNSAFE, { Pair(input, listener) }) { (input, listener) ->
+            val result = gyroSumComputer?.performOperation(input)
+            result?.let { listener?.gyroSumUpdate(it) }
         }
     }
 }
